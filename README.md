@@ -30,5 +30,7 @@ flowchart TB
     style vm fill:#e3e3e3,color:#333333,stroke:#838383
 ```
 
-![Test zdjęcia](./img/app_4_players.jpg)
 
+# Panel dotykowy HMI
+
+![Test zdjęcia](./img/app_4_players.jpg)
