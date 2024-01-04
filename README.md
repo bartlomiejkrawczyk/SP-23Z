@@ -34,9 +34,9 @@ Stanowisko składa się z obiektu sterowania, sterownika PLC S7-1200, dotykowego
 
 Do obiektu sterowania można dołączyć sterownik PLC (kablem sygnałowym we/wy z SZARYMI końcówkami) albo pulpit sterowania ręcznego (kablem sygnałowym we/wy z CZARNYMI końcówkami).
 
-Pulpit sterowania ręcznego warto wykorzystać na początkowym etapie pracy do zapoznanaia się ze sposobem działania poszczególnych elementów wykonawczych oraz czujników stanowiska. Może on również posłużyć do zaplanowania algorytmu sterowania. Proszę zwrócić uwagę na różnicę w sposobie sterowania siłownikami pneumatycznymi dołączonymi do zworów jedno- i dwucewkowych.
+Pulpit sterowania ręcznego warto wykorzystać na początkowym etapie pracy do zapoznania się ze sposobem działania poszczególnych elementów wykonawczych oraz czujników stanowiska. Może on również posłużyć do zaplanowania algorytmu sterowania. Proszę zwrócić uwagę na różnicę w sposobie sterowania siłownikami pneumatycznymi dołączonymi do zworów jedno- i dwucewkowych.
 
-Przełączniki pulpitu sterowania ręcznego w położeniu prawym pozwalają na wymuszenie stabilnej wartości 1, w położeniu lewym - niestabilnej. Uaktywnienie przełączników następuje po załączeniu przełącznkika "Strobe": trwałym - położenie prawe, nietrwałym - położenie lewe.
+Przełączniki pulpitu sterowania ręcznego w położeniu prawym pozwalają na wymuszenie stabilnej wartości 1, w położeniu lewym - niestabilnej. Uaktywnienie przełączników następuje po załączeniu przełącznika "Strobe": trwałym - położenie prawe, nietrwałym - położenie lewe.
 
 Ważne:
 
