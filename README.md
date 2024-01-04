@@ -27,7 +27,24 @@ Symbol | Adres | Opis
 
 # Opis stanowiska
 
-Stanowisko składa się z obiektu sterowania, sterownika PLC S7-1200, dotykowego panelu operatorskiego
+Stanowisko składa się z obiektu sterowania, sterownika PLC S7-1200, dotykowego panelu operatorskiego KTP700 oraz komputera z oprogramowaniem narzędziowym TIA Portal V16. Komputer, sterownik i panel są połączone kablami sieci PROFINET. Adresy IP urządzeń:
+- Komputer: 192.168.2.200
+- Sterownik: 192.168.1.41
+- Panel: 192.168.1.42
+
+Do obiektu sterowania można dołączyć sterownik PLC (kablem sygnałowym we/wy z SZARYMI końcówkami) albo pulpit sterowania ręcznego (kablem sygnałowym we/wy z CZARNYMI końcówkami).
+
+Pulpit sterowania ręcznego warto wykorzystać na początkowym etapie pracy do zapoznanaia się ze sposobem działania poszczególnych elementów wykonawczych oraz czujników stanowiska. Może on również posłużyć do zaplanowania algorytmu sterowania. Proszę zwrócić uwagę na różnicę w sposobie sterowania siłownikami pneumatycznymi dołączonymi do zworów jedno- i dwucewkowych.
+
+Przełączniki pulpitu sterowania ręcznego w położeniu prawym pozwalają na wymuszenie stabilnej wartości 1, w położeniu lewym - niestabilnej. Uaktywnienie przełączników następuje po załączeniu przełącznkika "Strobe": trwałym - położenie prawe, nietrwałym - położenie lewe.
+
+Ważne:
+
+1. Znaczniki z bajtów MB10 (M10.x) i MB11 (M11.x) są zajęte do celów systemowych. Do własnych celów proszę wykorzystywać inne znaczniki.
+2. Bieżącą zawartość wszystkich używanych liczników należy przedstawić na ekranie dotykowym.
+3. Realizując polecenia migania kontrolką, można zarówno uaktywnić dla tej kontrolki animację migania (Animations/Flashing), jak i wykorzystać bity zegarowe bajtu MB10. Ze względu na czas aktualizacji obrazu na ekranie nie należy wykorzystywać zbyt dużych częstotliwości.
+4. Aranżacja ekranu (ergonomia, estetyka, czytelność) będą podlegały ocenie.
+5. Jako przycisk INI (ustawienie stanu początkowego automatu sterującego, zerowanie liczników itp.) można wykorzystać dowolny z przycisków umieszczonych na płycie montażowej po prawej stronie sterownika (bity I1.x).
 
 # Zadanie do wykonania
 
@@ -74,14 +91,14 @@ flowchart TB
     x6 --I6 / Q1 = 1--> x7
     
     x7 --I2 / Q1 = 0, Q2 = 1--> x8
-    x8 --I4 / Q3 = 0, T2 = 1--> x9
+    x8 --I4 / Q3 = 1, T2 = 1--> x9
     x9 --T2 / Q2 = 0, T2 = 0, C1++--> x10
     x10 --C1 < 3--> x11
     x10 --C1 > 2 / D1 = 1--> x11
     
     x6 --!I6 / Q1 = 1--> x13
     x13 --I3 / Q1 = 0, Q2 = 1--> x14
-    x14 --I4 / Q3 = 0, T2 = 1--> x15
+    x14 --I4 / Q3 = 1, T2 = 1--> x15
     x15 --T2 / Q2 = 0, T2 = 0, C2++--> x16
     x16 --C2 < 3--> x11
     x16 --C2 > 2 / D2 = 2--> x11
