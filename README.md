@@ -1,5 +1,30 @@
 # Opis stanowiska
 
+![Sterownik PLC](./img/sterownik_programowalny.jpg)
+
+Stanowisko składa się z obiektu sterowania, sterownika PLC S7-1200, dotykowego panelu operatorskiego KTP700 oraz komputera z oprogramowaniem narzędziowym TIA Portal V16. Komputer, sterownik i panel są połączone kablami sieci PROFINET. Adresy IP urządzeń:
+- Komputer: 192.168.2.200
+- Sterownik: 192.168.1.41
+- Panel: 192.168.1.42
+
+Do obiektu sterowania można dołączyć sterownik PLC (kablem sygnałowym we/wy z SZARYMI końcówkami) albo pulpit sterowania ręcznego (kablem sygnałowym we/wy z CZARNYMI końcówkami).
+
+Pulpit sterowania ręcznego warto wykorzystać na początkowym etapie pracy do zapoznania się ze sposobem działania poszczególnych elementów wykonawczych oraz czujników stanowiska. Może on również posłużyć do zaplanowania algorytmu sterowania. Proszę zwrócić uwagę na różnicę w sposobie sterowania siłownikami pneumatycznymi dołączonymi do zworów jedno- i dwucewkowych.
+
+Przełączniki pulpitu sterowania ręcznego w położeniu prawym pozwalają na wymuszenie stabilnej wartości 1, w położeniu lewym - niestabilnej. Uaktywnienie przełączników następuje po załączeniu przełącznika "Strobe": trwałym - położenie prawe, nietrwałym - położenie lewe.
+
+Ważne:
+
+1. Znaczniki z bajtów MB10 (M10.x) i MB11 (M11.x) są zajęte do celów systemowych. Do własnych celów proszę wykorzystywać inne znaczniki.
+2. Bieżącą zawartość wszystkich używanych liczników należy przedstawić na ekranie dotykowym.
+3. Realizując polecenia migania kontrolką, można zarówno uaktywnić dla tej kontrolki animację migania (Animations/Flashing), jak i wykorzystać bity zegarowe bajtu MB10. Ze względu na czas aktualizacji obrazu na ekranie nie należy wykorzystywać zbyt dużych częstotliwości.
+4. Aranżacja ekranu (ergonomia, estetyka, czytelność) będą podlegały ocenie.
+5. Jako przycisk INI (ustawienie stanu początkowego automatu sterującego, zerowanie liczników itp.) można wykorzystać dowolny z przycisków umieszczonych na płycie montażowej po prawej stronie sterownika (bity I1.x).
+
+# Opis stanowiska "Przenoszenie"
+
+![Stanowisko "Przenoszenie"](./img/maszyna.jpg)
+
 Detal jest umieszczany w widocznym zagłębieniu położenia początkowego , gdzie przy pomocy czujnika optycznego jest określany jego kolor. Następnie przy pomocy liniowego siłownika pneumatycznego, wyposażonego w mechaniczny chwytak o ruchu pionowym, może być podniesiony, przeniesiony i upuszczony do jednego z dwóch magazynów - pochylni albo ewentualnie na zewnątrz stanowiska. Problemem stanowiska jest widoczna bezwładność zatrzymywania poziomego ruchu manipulatora w odpowiedniej, w miarę precyzyjnej, pozycji - wymaga to właściwego rozwiązania programowego.
 
 Sygnały wejściowe i wyjściowe stanowiska są dostępne pod adresami:
@@ -24,27 +49,6 @@ Symbol | Adres | Opis
 1M2    | Q0.1  | Chwytak do pozycji końcowej (w prawo)
 2M1    | Q0.2  | Opuść chwytak
 3M1    | Q0.3  | Otwórz chwytak
-
-# Opis stanowiska
-
-Stanowisko składa się z obiektu sterowania, sterownika PLC S7-1200, dotykowego panelu operatorskiego KTP700 oraz komputera z oprogramowaniem narzędziowym TIA Portal V16. Komputer, sterownik i panel są połączone kablami sieci PROFINET. Adresy IP urządzeń:
-- Komputer: 192.168.2.200
-- Sterownik: 192.168.1.41
-- Panel: 192.168.1.42
-
-Do obiektu sterowania można dołączyć sterownik PLC (kablem sygnałowym we/wy z SZARYMI końcówkami) albo pulpit sterowania ręcznego (kablem sygnałowym we/wy z CZARNYMI końcówkami).
-
-Pulpit sterowania ręcznego warto wykorzystać na początkowym etapie pracy do zapoznania się ze sposobem działania poszczególnych elementów wykonawczych oraz czujników stanowiska. Może on również posłużyć do zaplanowania algorytmu sterowania. Proszę zwrócić uwagę na różnicę w sposobie sterowania siłownikami pneumatycznymi dołączonymi do zworów jedno- i dwucewkowych.
-
-Przełączniki pulpitu sterowania ręcznego w położeniu prawym pozwalają na wymuszenie stabilnej wartości 1, w położeniu lewym - niestabilnej. Uaktywnienie przełączników następuje po załączeniu przełącznika "Strobe": trwałym - położenie prawe, nietrwałym - położenie lewe.
-
-Ważne:
-
-1. Znaczniki z bajtów MB10 (M10.x) i MB11 (M11.x) są zajęte do celów systemowych. Do własnych celów proszę wykorzystywać inne znaczniki.
-2. Bieżącą zawartość wszystkich używanych liczników należy przedstawić na ekranie dotykowym.
-3. Realizując polecenia migania kontrolką, można zarówno uaktywnić dla tej kontrolki animację migania (Animations/Flashing), jak i wykorzystać bity zegarowe bajtu MB10. Ze względu na czas aktualizacji obrazu na ekranie nie należy wykorzystywać zbyt dużych częstotliwości.
-4. Aranżacja ekranu (ergonomia, estetyka, czytelność) będą podlegały ocenie.
-5. Jako przycisk INI (ustawienie stanu początkowego automatu sterującego, zerowanie liczników itp.) można wykorzystać dowolny z przycisków umieszczonych na płycie montażowej po prawej stronie sterownika (bity I1.x).
 
 # Zadanie do wykonania
 
@@ -126,4 +130,4 @@ flowchart TB
 
 # Panel dotykowy HMI
 
-<!-- ![Test zdjęcia](./img/app_4_players.jpg) -->
+![Ekran HMI](./img/ekranik_basic.jpg)
